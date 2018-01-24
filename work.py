@@ -1,34 +1,37 @@
-class animal():
-	eyes = 2	
-	weight = 0	# kg
-	speech = ''
+class Animal():
+    eyes = 2
+    weight = 0  # kg
+    speech = ''
 
-	def __init__(self, weight, speech):
-		self.weight = weight
-		self.speech = speech
+    def __init__(self, weight, speech):
+        self.weight = weight
+        self.speech = speech
 
-	def speak(self):
-		print(self.speech)
+    def speak(self):
+        print(self.speech)
 
-class bird(animal):
-	wings = True
-	fly_skill = None
 
-	def __init__(self, weight, fly_skill, speech):
-		super().__init__(weight, speech)
-		self.fly_skill = fly_skill
+class Bird(Animal):
+    wings = True
+    fly_skill = None
 
-class artiodactyla(animal):
-	legs = 4
-	speed = None
+    def __init__(self, weight, fly_skill, speech):
+        super().__init__(weight, speech)
+        self.fly_skill = fly_skill
 
-	def __init__(self, weight, speed, speech):
-		super().__init__(weight, speech)
-		self.speed = speed
 
-duck = bird(3, 10, 'Wack, wack!')
-hen = bird(5, 2, 'Kooo, kooo...')
-goose = bird(10, 5, 'Kra, kra!')
+class Artiodactyla(Animal):
+    legs = 4
+    speed = None
+
+    def __init__(self, weight, speed, speech):
+        super().__init__(weight, speech)
+        self.speed = speed
+
+
+duck = Bird(3, 10, 'Wack, wack!')
+hen = Bird(5, 2, 'Kooo, kooo...')
+goose = Bird(10, 5, 'Kra, kra!')
 
 print('Утки говорят:', end=' ')
 duck.speak()
@@ -37,10 +40,10 @@ hen.speak()
 print('Гуси говорят:', end=' ')
 goose.speak()
 
-cow = artiodactyla(150, 20, 'Muuuuuuu...')
-goat = artiodactyla(30, 25, 'Meeeeeee...')
-sheep = artiodactyla(50, 30, 'Beeeeeee...')
-pig = artiodactyla(100, 15, 'Hru, hru!')
+cow = Artiodactyla(150, 20, 'Muuuuuuu...')
+goat = Artiodactyla(30, 25, 'Meeeeeee...')
+sheep = Artiodactyla(50, 30, 'Beeeeeee...')
+pig = Artiodactyla(100, 15, 'Hru, hru!')
 print('Коровы говорят:', end=' ')
 cow.speak()
 print('Козы говорят:', end=' ')
